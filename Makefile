@@ -44,6 +44,6 @@ docker-build: ## Build docker image
 
 .PHONY: docker-push
 docker-push: ## Push docker image to Docker Hub
-	@echo 'pushing docker image $(IMAGE):$(TAG) and latest to Docker Hub'
+	@echo 'pushing docker image $(IMAGE):$(VERSION) and latest to Docker Hub'
 	docker push $(IMAGE):latest
 	docker push $(IMAGE):$(VERSION)

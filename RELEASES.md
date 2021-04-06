@@ -1,5 +1,9 @@
 ## Golang Devbox Releases
 
+# 0.3.0
+
+- switch to developer user at the end of image definition in Dockerfile
+
 # 0.2.0
 
 - Pin tag of devbox-core base image to 0.3.0
