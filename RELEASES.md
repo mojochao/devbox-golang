@@ -1,5 +1,11 @@
 # Devbox-Golang Releases
 
+## 0.7.0
+
+- Add [gore](https://github.com/motemen/gore) to image
+- Add [vegeta](https://github.com/tsenart/vegeta) to image
+- Pin tag of devbox-core base image to 0.7.0
+
 ## 0.6.0
 
 - Add cobra, gocode and govvv to image

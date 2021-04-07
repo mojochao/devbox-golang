@@ -34,10 +34,12 @@ The core golang toolchain is supported by the following go tools.
 - [gomodifytags](https://github.com/fatih/gomodifytags)
 - [gopkgs](https://github.com/haya14busa/gopkgs/cmd/gopkgs)
 - [gopls](https://golang.org/x/tools/gopls)
+- [gore](https://github.com/motemen/gore)  
 - [gorename](https://golang.org/x/tools/cmd/gorename)
 - [gotests](https://github.com/cweill/gotests/gotests)
 - [govvv](https://github.com/ahmetb/govvv)
 - [impl](https://github.com/josharian/impl)
+- [vegeta](https://github.com/tsenart/vegeta)
 
 These tools can be assembled with vim and emacs into a perfectly adequate Golang
 development environment.

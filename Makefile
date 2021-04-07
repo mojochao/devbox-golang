@@ -1,6 +1,6 @@
 #==============================================================================
 #
-# Makefile for building Docker images and pushing them to AWS ECR registries.
+# Makefile for building Docker images and pushing them to Docker Hub registries.
 #
 #==============================================================================
 

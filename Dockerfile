@@ -1,4 +1,4 @@
-FROM mojochao/devbox-core:0.5.0
+FROM mojochao/devbox-core:0.7.0
 
 USER root
 RUN curl -sSfL https://golang.org/dl/go1.16.3.linux-amd64.tar.gz -o /tmp/go1.16.3.linux-amd64.tar.gz \
@@ -12,13 +12,15 @@ RUN curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/i
     && /usr/local/go/bin/go install github.com/cweill/gotests/gotests@latest \
     && /usr/local/go/bin/go install github.com/davidrjenni/reftools/cmd/fillstruct@latest \
     && /usr/local/go/bin/go install github.com/fatih/gomodifytags@latest \
+    && /usr/local/go/bin/go install github.com/go-delve/delve/cmd/dlv@latest \
     && /usr/local/go/bin/go install github.com/godoctor/godoctor@latest \
     && /usr/local/go/bin/go install github.com/haya14busa/gopkgs/cmd/gopkgs@latest \
-    && /usr/local/go/bin/go install github.com/nsf/gocode@latest \
     && /usr/local/go/bin/go install github.com/josharian/impl@latest \
+    && /usr/local/go/bin/go install github.com/motemen/gore/cmd/gore@latest \
+    && /usr/local/go/bin/go install github.com/nsf/gocode@latest \
     && /usr/local/go/bin/go install github.com/rogpeppe/godef@latest \
     && /usr/local/go/bin/go install github.com/spf13/cobra/cobra@latest \
-    && /usr/local/go/bin/go install github.com/go-delve/delve/cmd/dlv@latest \
+    && /usr/local/go/bin/go install github.com/tsenart/vegeta@latest \
     && /usr/local/go/bin/go install golang.org/x/lint/golint@latest \
     && /usr/local/go/bin/go install golang.org/x/tools/cmd/godoc@latest \
     && /usr/local/go/bin/go install golang.org/x/tools/cmd/goimports@latest \
@@ -30,3 +32,11 @@ RUN curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/i
 
 USER developer
 WORKDIR /home/developer
+
+COPY golang.Go-0.24.0.vsix /home/developer/golang.Go-0.24.0.vsix
+RUN mkdir golang.Go-0.24.0 \
+    && cd golang.Go-0.24.0 \
+    && unzip /home/developer/golang.Go-0.24.0.vsix \
+    && rm -rf /home/developer/golang.Go-0.24.0.vsix \
+
+
