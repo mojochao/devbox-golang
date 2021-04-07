@@ -1,4 +1,4 @@
-## Devbox for Golang
+## Devbox-Golang
 
 Interactively running and debugging in a Docker or Kubernetes environment is
 hell. In such environments a development host, or "devbox", running inside 
@@ -25,9 +25,6 @@ These currently include:
 It is intended that this image can be used as a base for more customized
 project-specific needs.
 
-This repository also contains a [devbox script](bin/devbox) that is useful for
-working with devbox containers.
-
 ## Organization
 
 This git repository is organized as follows:
@@ -51,32 +48,85 @@ build targets.
     $ make
     help                           Show this help
     docker-build                   Build docker image
-    ecr-login                      Login to ECR for pushing docker images.
-    ecr-tag                        Tag docker image with with $TAG to ECR (default: latest)
-    ecr-push                       Push docker image with $TAG to ECR (default: latest)
+    docker-push                    Push docker images to Docker Hub
 
 The typical workflow is to build an image, login to the ECR repository, tag the
 built image with tags for ECR, and push those tagged images to ECR.
 
     $ make docker-build
-    $ make ecr-login
-    $ make ecr-tag
-    $ make ecr-push
+    $ make docker-push
 
 You can also provide multiple targets at once.
 
-    $ make docker-build ecr-login ecr-tag ecr-push
+    $ make docker-build docker-push
 
 ## Use images
 
-A devbox build can be used locally in a Docker container.
+The [devbox](https://github.com/mojochao/devbox) CLI eases use of devbox images.
 
-    $ bin/devbox start
+With no arguments, `devbox` displays top level usage.
+
+    $ devbox
+    Interactively running and debugging in containers can be hell. For such an
+    environment, a development host running inside the container is useful.
+    
+    This application manages use of terminal-based development environment devboxes.
+    A devbox is defined in terms of:
+    
+    - name of devbox container or pod running the devbox image
+    - description of devbox usage
+    - image name of the devbox to run in a container or pod
+    - shell name or path to run in the container or pod
+    - kubeconfig of Kubernetes cluster to run devbox pods (optional, Kubernetes only)
+    - namespace of Kubernetes cluster to run devbox pods  (optional, Kubernetes only
+    
+    Note that a devbox is intended to be more "pet" than "cattle", more persistent
+    than ephemeral.  Any files copied to the devbox will be lost once stopped.
+    
+    Usage:
+    devbox [command]
+    
+    Available Commands:
+    add         Add devbox to state
+    completion  Generate completion script
+    context     Get or set active devbox ID context
+    copy        Copy SRC files to devbox DST files
+    edit        Edit the state file
+    help        Help about any command
+    init        Initialize devbox state file
+    list        List devboxes in state
+    remove      Remove devboxes from state
+    shell       Open interactive shell in devbox
+    start       Start devboxes
+    stop        Stop devboxes
+    version     Display version
+    
+    Flags:
+    --dry-run        preview commands
+    -h, --help           help for devbox
+    --state string   state file (default "~/.devbox.state.yaml")
+    --verbose        show verbose output
+    
+    Use "devbox [command] --help" for more information about a command.
+
+Initialize `devbox` once before further use.
+
+    $ devbox init
+
+Next add a new devbox for use in docker and start it.
+
+    $ devbox add golang --image mojochao/devbox-golang --name my-devbox
+
+    $ devbox start
     f647f23f3151a9025e197cc6abaf188a2248d0cb296a65622d713328a687b816
     
     $ docker ps
-    CONTAINER ID   IMAGE                          COMMAND            CREATED         STATUS         PORTS     NAMES
-    f647f23f3151   sambatv/devbox-golang:latest   "sleep infinity"   5 seconds ago   Up 4 seconds             devbox-allengooch
+    CONTAINER ID   IMAGE                           COMMAND            CREATED         STATUS         PORTS     NAMES
+    f647f23f3151   mojochao/devbox-golang:latest   "sleep infinity"   5 seconds ago   Up 4 seconds             devbox-allengooch
 
 Once started, a devbox shell can be opened.
 
+    $ devbox shell
+    ➜  ~
+
+By default, an oh-my-zsh! configured z shell is used.
