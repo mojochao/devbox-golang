@@ -1,5 +1,9 @@
 # Devbox-Golang Releases
 
+## 0.6.0
+
+- Add cobra, gocode and govvv to image
+
 ## 0.5.0
 
 - Add additional go tools needed for ide-like support

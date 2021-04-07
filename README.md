@@ -18,23 +18,26 @@ This development environment features:
 - Image based on core tools in [devbox-core](https://github.com/mojochao/devbox-core)
 - Golang 1.16.3 toolchain
 
-The core golang toolchain is supported by the following applications.
+The core golang toolchain is supported by the following go tools.
 
-- [golangci-lint](https://github.com/golangci/golangci-lint)
-- [gotests](https://github.com/cweill/gotests/gotests)
-- [fillstruct](https://github.com/davidrjenni/reftools/cmd/fillstruct)
-- [gomodifytags](https://github.com/fatih/gomodifytags)
-- [godoctot](https://github.com/godoctor/godoctor)
-- [gopkgs](https://github.com/haya14busa/gopkgs/cmd/gopkgs)
-- [impl](https://github.com/josharian/impl)
-- [godef](https://github.com/rogpeppe/godef)
+- [cobra](https://github.com/spf13/cobra)
 - [dlv](https://github.com/go-delve/delve/cmd/dlv)
-- [golint](https://golang.org/x/lint/golint)
-- [godoc](https://golang.org/x/tools/cmd/godoc)
-- [goimports](https://golang.org/x/tools/cmd/goimports)
-- [gorename](https://golang.org/x/tools/cmd/gorename)
+- [fillstruct](https://github.com/davidrjenni/reftools/cmd/fillstruct)
 - [go guru](https://golang.org/x/tools/cmd/guru)
+- [gocode](https://github.com/nsf/gocode)
+- [godef](https://github.com/rogpeppe/godef)
+- [godoc](https://golang.org/x/tools/cmd/godoc)
+- [godoctot](https://github.com/godoctor/godoctor)
+- [goimports](https://golang.org/x/tools/cmd/goimports)
+- [golangci-lint](https://github.com/golangci/golangci-lint)
+- [golint](https://golang.org/x/lint/golint)
+- [gomodifytags](https://github.com/fatih/gomodifytags)
+- [gopkgs](https://github.com/haya14busa/gopkgs/cmd/gopkgs)
 - [gopls](https://golang.org/x/tools/gopls)
+- [gorename](https://golang.org/x/tools/cmd/gorename)
+- [gotests](https://github.com/cweill/gotests/gotests)
+- [govvv](https://github.com/ahmetb/govvv)
+- [impl](https://github.com/josharian/impl)
 
 These tools can be assembled with vim and emacs into a perfectly adequate Golang
 development environment.

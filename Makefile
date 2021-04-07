@@ -37,13 +37,13 @@ help: ## Show this help
 #==============================================================================
 
 .PHONY: docker-build
-docker-build: ## Build docker image
-	@echo 'building docker image $(IMAGE)'
+docker-build: ## Build docker image and tag it with version
+	@echo 'building docker image $(IMAGE):latest and tagging it with $(VERSION)'
 	DOCKER_BUILDKIT=1 docker build -f $(DOCKERFILE) --progress=plain -t $(IMAGE):latest .
 	docker tag $(IMAGE) $(IMAGE):$(VERSION)
 
 .PHONY: docker-push
-docker-push: ## Push docker image to Docker Hub
-	@echo 'pushing docker image $(IMAGE):$(VERSION) and latest to Docker Hub'
+docker-push: ## Push docker images tagged latest and version to Docker Hub
+	@echo 'pushing docker image $(IMAGE):latest and $(IMAGE):$(VERSION) to Docker Hub'
 	docker push $(IMAGE):latest
 	docker push $(IMAGE):$(VERSION)
