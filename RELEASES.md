@@ -1,5 +1,9 @@
 # Devbox-Golang Releases
 
+## 0.8.0
+
+- Add vscode golang plugin zip used by gopls
+
 ## 0.7.0
 
 - Add [gore](https://github.com/motemen/gore) to image
