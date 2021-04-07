@@ -13,31 +13,31 @@ Note that once started the devbox container is intended to be more "pet" than
 "cattle", more persistent than ephemeral.  Any files copied to the devbox
 container or pod will be lost once it has been stopped.
 
-This development environment is a bit opinionated about the tools installed.
-These currently include:
+This development environment features:
 
-- Golang 1.16.3 toolchain on Debian 10 (Buster) base
-- Python 2.7.16 and 3.7.3
-- network utilities like ifconfig, ping, dig, netcat, traceroute, socat, ssh, etc
-- Bash and Zsh
-- Emacs and Vim
+- Image based on core tools in [devbox-core](https://github.com/mojochao/devbox-core)
+- Golang 1.16.3 toolchain
 
-It is intended that this image can be used as a base for more customized
-project-specific needs.
+The core golang toolchain is supported by the following applications.
 
-## Organization
+- [golangci-lint](https://github.com/golangci/golangci-lint)
+- [gotests](https://github.com/cweill/gotests/gotests)
+- [fillstruct](https://github.com/davidrjenni/reftools/cmd/fillstruct)
+- [gomodifytags](https://github.com/fatih/gomodifytags)
+- [godoctot](https://github.com/godoctor/godoctor)
+- [gopkgs](https://github.com/haya14busa/gopkgs/cmd/gopkgs)
+- [impl](https://github.com/josharian/impl)
+- [godef](https://github.com/rogpeppe/godef)
+- [dlv](https://github.com/go-delve/delve/cmd/dlv)
+- [golint](https://golang.org/x/lint/golint)
+- [godoc](https://golang.org/x/tools/cmd/godoc)
+- [goimports](https://golang.org/x/tools/cmd/goimports)
+- [gorename](https://golang.org/x/tools/cmd/gorename)
+- [go guru](https://golang.org/x/tools/cmd/guru)
+- [gopls](https://golang.org/x/tools/gopls)
 
-This git repository is organized as follows:
-
-- [devbox script](bin/devbox) providing easy management of devbox containers in
-  Docker or Kubernetes
-- [bitbucket-pipelines.yml](bitbucket-pipelines.yml) defining devbox-golang
-  image build pipelines for this repository
-- [Dockerfile](Dockerfile) defining the devbox-golang image build
-- [Makefile](Makefile) providing automation for development and build pipeline tasks
-- [README.md](README.md) this document
-- [RELEASES.md](RELEASES.md) providing release notes for image build versions
-- [VERSION](VERSION) defining the image build version
+These tools can be assembled with vim and emacs into a perfectly adequate Golang
+development environment.
 
 ## Build and push images
 

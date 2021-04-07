@@ -1,4 +1,4 @@
-FROM mojochao/devbox-core:0.4.1
+FROM mojochao/devbox-core:0.5.0
 
 USER root
 RUN curl -sSfL https://golang.org/dl/go1.16.3.linux-amd64.tar.gz -o /tmp/go1.16.3.linux-amd64.tar.gz \

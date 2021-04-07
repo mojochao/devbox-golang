@@ -1,4 +1,8 @@
-## Devbox-Golang Releases
+# Devbox-Golang Releases
+
+## 0.5.0
+
+- Add additional go tools needed for ide-like support
 
 ## 0.4.1
 
