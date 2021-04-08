@@ -52,18 +52,20 @@ build targets.
 
     $ make
     help                           Show this help
-    docker-build                   Build docker image
-    docker-push                    Push docker images to Docker Hub
+    docker-build                   Build docker images
+    docker-tag                     Tag built image with $TAG (default: VERSION)
+    docker-push                    Push image tags to Docker Hub
 
-The typical workflow is to build an image, login to the ECR repository, tag the
-built image with tags for ECR, and push those tagged images to ECR.
+The typical workflow is to build an image, tag it with default VERSION, or an
+ad hoc tag, and finally push image and tag to Docker Hub.
 
     $ make docker-build
+    $ make docker-tag
     $ make docker-push
 
 You can also provide multiple targets at once.
 
-    $ make docker-build docker-push
+    $ make docker-build docker-tag docker-push
 
 ## Use images
 
@@ -95,7 +97,6 @@ With no arguments, `devbox` displays top level usage.
     add         Add devbox to state
     completion  Generate completion script
     context     Get or set active devbox ID context
-    copy        Copy SRC files to devbox DST files
     edit        Edit the state file
     help        Help about any command
     init        Initialize devbox state file
@@ -120,7 +121,7 @@ Initialize `devbox` once before further use.
 
 Next add a new devbox for use in docker and start it.
 
-    $ devbox add golang --image mojochao/devbox-golang --name my-devbox
+    $ devbox add my-id --image mojochao/devbox-golang --name my-devbox
 
     $ devbox start
     f647f23f3151a9025e197cc6abaf188a2248d0cb296a65622d713328a687b816
@@ -132,6 +133,3 @@ Next add a new devbox for use in docker and start it.
 Once started, a devbox shell can be opened.
 
     $ devbox shell
-    ➜  ~
-
-By default, an oh-my-zsh! configured z shell is used.

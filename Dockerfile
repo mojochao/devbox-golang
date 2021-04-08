@@ -1,4 +1,4 @@
-FROM mojochao/devbox-core:0.8.0
+FROM mojochao/devbox-core:0.9.0
 
 USER root
 RUN curl -sSfL https://golang.org/dl/go1.16.3.linux-amd64.tar.gz -o /tmp/go1.16.3.linux-amd64.tar.gz \
@@ -32,11 +32,3 @@ RUN curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/i
 
 USER developer
 WORKDIR /home/developer
-
-COPY golang.Go-0.24.0.vsix /home/developer/golang.Go-0.24.0.vsix
-RUN mkdir -p src/golang.Go-0.24.0 \
-    && cd src/golang.Go-0.24.0 \
-    && unzip /home/developer/golang.Go-0.24.0.vsix \
-    && rm -rf /home/developer/golang.Go-0.24.0.vsix
-
-

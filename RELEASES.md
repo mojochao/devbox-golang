@@ -1,8 +1,15 @@
 # Devbox-Golang Releases
 
+## 0.9.0
+
+- Remove vscode golang plugin zip needed for DAP (Debug Adaptor Protocol) use,
+  as the latest version of dap-mode pulls this on demand.
+- Pin tag of devbox-core base image to 0.9.0
+
 ## 0.8.0
 
-- Add vscode golang plugin zip used by gopls
+- Add vscode golang plugin zip needed for Debug Adaptor Protocol (DAP) use
+- Pin tag of devbox-core base image to 0.8.0
 
 ## 0.7.0
 
