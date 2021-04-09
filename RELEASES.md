@@ -1,5 +1,9 @@
 # Devbox-Golang Releases
 
+## 0.10.1
+
+- Mention the new goplay command in the docs
+
 ## 0.10.0
 
 - Symlink /usr/local/go/bin* to /usr/local/bin

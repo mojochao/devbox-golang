@@ -33,6 +33,7 @@ The core golang toolchain is supported by the following go tools.
 - [golint](https://golang.org/x/lint/golint)
 - [gomodifytags](https://github.com/fatih/gomodifytags)
 - [gopkgs](https://github.com/haya14busa/gopkgs/cmd/gopkgs)
+- [goplay](https://github.com/haya14busa/goplay/cmd/goplay)
 - [gopls](https://golang.org/x/tools/gopls)
 - [gore](https://github.com/motemen/gore)  
 - [gorename](https://golang.org/x/tools/cmd/gorename)
