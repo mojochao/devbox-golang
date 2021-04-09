@@ -1,5 +1,11 @@
 # Devbox-Golang Releases
 
+## 0.10.0
+
+- Symlink /usr/local/go/bin* to /usr/local/bin
+- Add haya14busa/goplay command to image 
+- Pin tag of devbox-core base image to 0.10.0
+
 ## 0.9.0
 
 - Remove vscode golang plugin zip needed for DAP (Debug Adaptor Protocol) use,
