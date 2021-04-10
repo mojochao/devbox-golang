@@ -5,9 +5,9 @@ hell. In such environments a development host, or "devbox", running inside
 Docker or Kubernetes is useful.
 
 This git repository contains the artifacts necessary to build a containerized,
-terminal-based Golang development environment Docker image and push it to AWS
-ECR for use run locally in a Docker container or run remotely in a Kubernetes
-cluster pod.
+terminal-based Golang development environment Docker image and push it to an
+image repository. The image can be run locally in a Docker container or run
+remotely in a Kubernetes cluster pod.
 
 Note that once started the devbox container is intended to be more "pet" than
 "cattle", more persistent than ephemeral.  Any files copied to the devbox

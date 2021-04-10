@@ -38,7 +38,7 @@ help: ## Show this help
 #==============================================================================
 
 .PHONY: docker-build
-docker-build: ## Build docker images
+docker-build: ## Build docker image
 	@echo 'building docker image $(IMAGE):latest'
 	DOCKER_BUILDKIT=1 docker build -f $(DOCKERFILE) --progress=plain -t $(IMAGE):latest .
 
